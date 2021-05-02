@@ -1,0 +1,45 @@
+---
+title: "Lista de Exercícios 1"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Questão 1
+
+preparando um conjunto de dados numérico com as variáveis do exercício:
+
+```{r}
+e1.df1 <- data.frame(dia = c(1:30),
+                 vitmas = c(5,8,8,9,11,7,7,6,9,9,11,12,8,10,5,11,13,11,13,8,5,11,12,11,10,12,9,9,7,12))#cria dataframe 1 com as variáveis do exercício
+
+```
+
+pergunta (a)
+
+```{r}
+e1.df2 <- group_by(e1.df1,vitmas)%>%summarise(frq_absoluta=length(dia))#cria dataframe 2 agrupado com a frequencia absoluta             
+e1.tot <- sum(e1.df2$frq_absoluta)#calcula o total da frequencia absoluta
+e1.df2$fr_relativa <- e1.df2$frq_absoluta/e1.tot #calcula a frequencia relativa e adciona no dataframe 2
+e1.df2 #resultado final 
+```
+
+pergunta (b)
+
+```{r}
+hist(e1.df1$vitmas) #cria histograma com distribuição de frequencia da quantidade de vitimas
+```
+
+pergunta (c)
+
+```{r}
+
+```
+
+## Questão 2
+
+preparando um conjunto de dados numérico com as variáveis do exercício:
